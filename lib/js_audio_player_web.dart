@@ -51,6 +51,9 @@ class JsAudioPlayerWeb {
       case 'mute':
         return mute(call.arguments);
         break;
+      case 'duration':
+        return duration;
+        break;
 
       default:
         throw PlatformException(

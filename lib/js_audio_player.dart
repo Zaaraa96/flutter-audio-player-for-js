@@ -12,6 +12,8 @@ class JsAudioPlayer {
     return version;
   }
 
+  Future<Stream<double>> get duration async => await _channel.invokeMethod('duration');
+
   void setPath(String path) async{
     await _channel.invokeMethod('setPath');
 
