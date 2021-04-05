@@ -1,0 +1,48 @@
+
+<head>
+<script src="https://cdn.jsdelivr.net/npm/howler@2.1.3/dist/howler.min.js" defer></script>
+  <script type="application/javascript" defer>
+      var audio;
+
+      function setAudioPath(path,onLoad) {
+        audio= new Howl({
+          src: [path],
+          preload : 'metadata'
+        });
+        audio.on('load', function(){
+        onLoad();
+          });
+          console.log('setAudioPath is called');
+      }
+
+      function seek(newPos) {
+      console.log('seek is called');
+        audio.seek(newPos);
+      }
+
+      function play() {
+        audio.play();
+      }
+
+      function pause() {
+        audio.pause();
+      }
+
+     function getDuration(){
+      console.log('getDuration is called');
+        return audio.duration();
+     }
+
+     function getPosition(){
+        return audio.seek();
+     }
+      function mute(){
+        return audio.mute(true);
+     }
+
+     function unmute(){
+        return audio.mute(false);
+     }
+
+    </script>
+  </head>

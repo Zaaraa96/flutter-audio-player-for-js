@@ -101,6 +101,7 @@ class JsAudioPlayerWeb {
   double getPosition() {
     return
       js.context.callMethod('getPosition');
+    // js.JsFunction.withThis(f)
   }
 
   void seek(int newPosition) {
@@ -114,3 +115,4 @@ class JsAudioPlayerWeb {
       js.context.callMethod('unmute');
   }
 }
+
